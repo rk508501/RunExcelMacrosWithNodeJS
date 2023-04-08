@@ -1,9 +1,12 @@
 const { spawn } = require('child_process');
 
-const scriptPath = 'utils\\setValsAndRunMacro.vbs';
-const AValue = '9';
-const BValue = '90';
-const CValue = '1';
+//const scriptPath = 'utils\\setValsAndRunMacro.vbs';
+//const scriptPath = 'utils\\openAndSaveMacroSheet.vbs';
+const scriptPath = 'utils\\getValueFromCSV.vbs';
+
+const AValue = '9999';
+const BValue = '99990';
+const CValue = '1999';
 
 const scriptProcess = spawn('cscript.exe', [scriptPath, AValue, BValue, CValue]);
 

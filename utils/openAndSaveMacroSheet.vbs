@@ -1,6 +1,6 @@
 Set objExcel = CreateObject("Excel.Application")
 objExcel.Visible = True
-Set objWorkbook = objExcel.Workbooks.Open("C:\Users\kulka\Downloads\SumMacro.xlsm")
+Set objWorkbook = objExcel.Workbooks.Open("C:\Automation\RunExcelMacrosWithNodeJS\data\SumMacro.xlsm")
 
 ' Get the command line arguments for A1, B1, and C1
 AValue = WScript.Arguments.Item(0)
@@ -17,12 +17,8 @@ objExcel.Run "SumColumns"
 
 ' Save and close the workbook
 objWorkbook.Save
-
-' Return the value of cell D1
-Set objExcel = CreateObject("Excel.Application")
-objExcel.Visible = False
-Set objWorkbook = objExcel.Workbooks.Open("C:\Users\kulka\Downloads\SumMacro.xlsm")
-OutputValue = objWorkbook.Sheets(1).Range("D1").Value
 objWorkbook.Close
 objExcel.Quit
-WScript.StdOut.Write(OutputValue)
+
+Set objWorkbook = Nothing
+Set objExcel = Nothing
